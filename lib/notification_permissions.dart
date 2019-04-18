@@ -8,7 +8,7 @@ class NotificationPermissions {
       const MethodChannel('notification_permissions');
 
   Future<void> requestNotificationPermissions(
-      [IosNotificationSettings iosSettings = const IosNotificationSettings()]) {
+      [IosNotificationPermissionsSettings iosSettings = const IosNotificationPermissionsSettings()]) {
     return _channel.invokeMethod(
         'requestNotificationPermissions', iosSettings.toMap());
   }
@@ -37,14 +37,14 @@ class NotificationPermissions {
 
 enum PermissionStatus { granted, unknown, denied }
 
-class IosNotificationSettings {
-  const IosNotificationSettings({
+class IosNotificationPermissionsSettings {
+  const IosNotificationPermissionsSettings({
     this.sound = true,
     this.alert = true,
     this.badge = true,
   });
 
-  IosNotificationSettings._fromMap(Map<String, bool> settings)
+  IosNotificationPermissionsSettings._fromMap(Map<String, bool> settings)
       : sound = settings['sound'],
         alert = settings['alert'],
         badge = settings['badge'];
