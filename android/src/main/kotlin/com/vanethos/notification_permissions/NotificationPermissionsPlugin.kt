@@ -8,14 +8,11 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
-import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat.startActivity
 import android.net.Uri.fromParts
 import android.provider.Settings
 import android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-import androidx.core.view.accessibility.AccessibilityEventCompat.setAction
 import android.app.Activity
-
+import android.support.v4.app.NotificationManagerCompat
 
 
 class NotificationPermissionsPlugin(val registrar: Registrar): MethodCallHandler {
@@ -53,6 +50,7 @@ class NotificationPermissionsPlugin(val registrar: Registrar): MethodCallHandler
   }
 
   private fun getNotificationStatus() : String {
-    return if (NotificationManagerCompat.from(registrar.context()).areNotificationsEnabled()) permissionGranted else permissionDenied
+    return if (NotificationManagerCompat.from(registrar.context()).areNotificationsEnabled())
+      permissionGranted else permissionDenied
   }
 }
