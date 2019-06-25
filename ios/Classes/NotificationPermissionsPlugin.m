@@ -58,6 +58,8 @@
                         //the user must change notification settings in order te receive notifications
                         result(@"denied");
                     }
+                } else if (settings.authorizationStatus == UNAuthorizationStatusNotDetermined) {
+                    result(@"unknown");
                 } else {
                     result(@"denied");
                 }
