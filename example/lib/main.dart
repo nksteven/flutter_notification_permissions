@@ -100,7 +100,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                           // show the dialog/open settings screen
                           permissionManager
                               .requestNotificationPermissions(
-                                  const IosNotificationSettings(
+                                  const IosNotificationPermissionsSettings(
                                       sound: true, badge: true, alert: true))
                               .then((_) {
                             // when finished, check the permission status
