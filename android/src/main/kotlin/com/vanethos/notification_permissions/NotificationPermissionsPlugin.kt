@@ -12,7 +12,7 @@ import android.net.Uri.fromParts
 import android.provider.Settings
 import android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS
 import android.app.Activity
-import android.support.v4.app.NotificationManagerCompat
+import androidx.core.app.NotificationManagerCompat
 
 
 class NotificationPermissionsPlugin(val registrar: Registrar): MethodCallHandler {
